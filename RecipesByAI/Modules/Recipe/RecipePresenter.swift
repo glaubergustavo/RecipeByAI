@@ -9,7 +9,6 @@
 import UIKit
 
 protocol RecipePresenterDelegate {
-    func showCongratulations()
     func showError(_ strError: String)
 }
 
@@ -32,9 +31,5 @@ class RecipePresenter: NSObject {
         recipeTitle = title
         let untitledText = text.replacingOccurrences(of: Constants.Messages.Name + title, with: Constants.Messages.Empty)
         recipe = untitledText
-    }
-    
-    func saveMood() {
-        self.delegate?.showCongratulations()
     }
 }

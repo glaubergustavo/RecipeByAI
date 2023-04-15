@@ -12,22 +12,11 @@ import UIKit
                                   UITextViewDelegate,
                                   RecipePresenterDelegate {
     
-    // MARK: -@IBOutlet View Thanks
-    @IBOutlet weak var lblThanks: UILabel!
-    @IBOutlet weak var vwBackground: UIView!
-    @IBOutlet weak var vwPopupThanks: UIView!
-    @IBOutlet weak var btnExit: UIButton!
-    @IBOutlet weak var btnSeeMoodData: UIButton!
-    @IBOutlet weak var centerConstraint: NSLayoutConstraint!
-    var centerYConstraint: NSLayoutConstraint?
-    
     // MARK: -@IBOutlet ScrollView
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var actLoading: UIActivityIndicatorView!
     
-    // MARK: -@IBOutlet Mood status Views
-    @IBOutlet weak var vwRecipeImage: UIView!
-    @IBOutlet weak var imgRecipe: UIImageView!
+    // MARK: -@IBOutlet Recipe Title
     @IBOutlet weak var lblRecipeTitle: UILabel!
     @IBOutlet weak var textViewRecipe: UITextView!
     
@@ -61,84 +50,13 @@ import UIKit
     private func configUI() {
         
         configRecipeTitle()
-        hideAnimationVwThanks()
         configNavBar()
-        configLabels()
         configTextView()
     }
     
     private func configRecipeTitle() {
         presenter.configRecipeTitle()
     }
-    
-    private func hideAnimationVwThanks() {
-        if self.centerYConstraint != nil {
-            view.removeConstraint(self.centerYConstraint!)
-        }
-
-        self.centerYConstraint = NSLayoutConstraint(item: self.vwPopupThanks as Any,
-                                               attribute: .top,
-                                               relatedBy: .equal,
-                                               toItem: view,
-                                               attribute: .bottom,
-                                               multiplier: 1,
-                                               constant: 0)
-        
-        view.addConstraint(self.centerYConstraint!)
-
-        self.vwBackground.alpha = 0
-        self.vwPopupThanks.alpha = 0
-
-        view.layoutIfNeeded()
-    }
-    
-    private func showAnimationVwThanks() {
-        
-//        configAnimationPopupThanks()
-        
-        if self.centerYConstraint != nil {
-            self.view.removeConstraint(self.centerYConstraint!)
-        }
-        
-        UIView.animate(withDuration: 0.5) {
-
-            self.centerYConstraint = NSLayoutConstraint(item: self.vwPopupThanks as Any,
-                                                        attribute: .centerY,
-                                                        relatedBy: .equal,
-                                                        toItem: self.view,
-                                                        attribute: .centerY,
-                                                        multiplier: 1,
-                                                        constant: -100)
-
-            self.view.addConstraint(self.centerYConstraint!)
-            
-            self.navigationController?.navigationBar.alpha = 0
-            self.vwPopupThanks.alpha = 1
-            self.vwBackground.alpha = 0.7
-            
-            self.view.layoutIfNeeded()
-            self.view.layoutSubviews()
-        }
-    }
-    
-//    private func configAnimationPopupThanks() {
-//
-//        var animationViewThanks = LottieAnimationView()
-//        animationViewThanks = LottieAnimationView(name: Constants.Animations.CongratulationsAnimation)
-//        animationViewThanks.loopMode = .loop
-//        animationViewThanks.contentMode = .scaleAspectFill
-//        animationViewThanks.animationSpeed = 1.0
-//        animationViewThanks.play()
-//        vwPopupThanks.addSubview(animationViewThanks)
-//
-//        animationViewThanks.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            animationViewThanks.topAnchor.constraint(equalTo: vwPopupThanks.topAnchor, constant: 30),
-//            animationViewThanks.leadingAnchor.constraint(equalTo: vwPopupThanks.leadingAnchor, constant: 30),
-//            animationViewThanks.trailingAnchor.constraint(equalTo: vwPopupThanks.trailingAnchor, constant: -30),
-//            animationViewThanks.bottomAnchor.constraint(equalTo: btnSeeMoodData.topAnchor, constant: -10)
-//            ])
-//    }
     
     private func configNavBar() {
         
@@ -172,13 +90,6 @@ import UIKit
         self.textViewRecipe.text = presenter.recipe
     }
     
-    private func configLabels() {
-        
-        self.lblThanks.text = Constants.Messages.Thanks
-        self.btnSeeMoodData.setTitle(Constants.Messages.SeeDataMood, for: .normal)
-        self.btnExit.setTitle(Constants.Messages.Exit, for: .normal)
-    }
-    
     private func showLoading(_ loading: Bool) {
         
         if loading {
@@ -200,24 +111,6 @@ import UIKit
     // MARK: RecipePresenterDelegate
     //-----------------------------------------------------------------------
     
-    func showCongratulations() {
-        self.showAnimationVwThanks()
-    }
-    
     func showError(_ strError: String) {}
-    
-    //-----------------------------------------------------------------------
-    // MARK: -@IBAction Actions buttons
-    //-----------------------------------------------------------------------
-
-    @IBAction func saveMood(_ sender: Any) {
-        presenter.saveMood()
-    }
-    
-    @IBAction func seeMoodData(_ sender: Any) {}
-    
-    @IBAction func exit(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
-    }
     
 }

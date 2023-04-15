@@ -15,7 +15,7 @@ protocol HomePresenterDelegate: AnyObject {
     func showNotFoundMessage()
 }
 
-class HomePresenter {
+final class HomePresenter {
     
     var recipe: String = Constants.Messages.Empty
     var selectedIngredients: [String] = []

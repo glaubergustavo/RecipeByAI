@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Billabong.ttf">
+            <string>Billabong</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -16,38 +21,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6Y-bd-gen">
-                                <rect key="frame" x="16" y="59" width="361" height="1"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="Iiw-8D-NJL"/>
-                                </constraints>
-                            </view>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trR-ly-oZY">
-                                <rect key="frame" x="0.0" y="60" width="393" height="792"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYD-dn-bsr">
-                                        <rect key="frame" x="40" y="10" width="330" height="137.33333333333334"/>
-                                        <string key="text">🥗🥙🍝 
-
-Receitas Feitas por AI 
-
-🥧🥮🍲</string>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
-                                        <color key="textColor" systemColor="systemRedColor"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_RecipeAI2" translatesAutoresizingMaskIntoConstraints="NO" id="PGx-Jl-Uic">
+                                        <rect key="frame" x="0.0" y="0.0" width="392" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="JcP-bv-6gU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receitas Feitas por AI" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYD-dn-bsr">
+                                        <rect key="frame" x="40" y="25.333333333333314" width="330" height="49.333333333333371"/>
+                                        <fontDescription key="fontDescription" name="Billabong" family="Billabong" pointSize="40"/>
+                                        <color key="textColor" systemColor="systemOrangeColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escolha pelo menos 3 ingredientes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PV0-UO-GJq">
-                                        <rect key="frame" x="40" y="163.33333333333334" width="330" height="21.666666666666657"/>
+                                        <rect key="frame" x="40" y="110" width="330" height="21.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="330" id="w58-at-Ppc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
-                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="pzO-Ob-kkY">
-                                        <rect key="frame" x="40" y="205" width="312" height="1620"/>
+                                        <rect key="frame" x="40" y="141.66666666666663" width="312" height="1620"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="NwD-u1-1O0">
                                                 <rect key="frame" x="0.0" y="0.0" width="312" height="90"/>
@@ -63,7 +62,7 @@ Receitas Feitas por AI
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpq-ST-GqL">
-                                                                <rect key="frame" x="29.000000000000004" y="75" width="34.333333333333343" height="11.666666666666671"/>
+                                                                <rect key="frame" x="29.000000000000004" y="75.000000000000028" width="34.333333333333343" height="11.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -95,7 +94,7 @@ Receitas Feitas por AI
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cebola" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giA-de-WeU">
-                                                                <rect key="frame" x="30" y="75" width="32" height="11.666666666666671"/>
+                                                                <rect key="frame" x="30" y="75.000000000000028" width="32" height="11.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -122,7 +121,7 @@ Receitas Feitas por AI
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Açúcar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZb-3x-0tC">
-                                                                <rect key="frame" x="30.333333333333314" y="75" width="31.666666666666671" height="11.666666666666671"/>
+                                                                <rect key="frame" x="30.333333333333314" y="75.000000000000028" width="31.666666666666671" height="11.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -141,7 +140,7 @@ Receitas Feitas por AI
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="3dF-UB-veS">
-                                                <rect key="frame" x="0.0" y="102" width="312" height="90"/>
+                                                <rect key="frame" x="0.0" y="102.00000000000003" width="312" height="90"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnF-zH-Xfc">
                                                         <rect key="frame" x="0.0" y="0.0" width="92" height="90"/>
@@ -232,7 +231,7 @@ Receitas Feitas por AI
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Pcp-Ff-aTL">
-                                                <rect key="frame" x="0.0" y="204" width="312" height="90"/>
+                                                <rect key="frame" x="0.0" y="204.00000000000003" width="312" height="89.999999999999972"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQl-vV-inV">
                                                         <rect key="frame" x="0.0" y="0.0" width="92" height="90"/>
@@ -329,14 +328,14 @@ Receitas Feitas por AI
                                                         <rect key="frame" x="0.0" y="0.0" width="92" height="90"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Chicken" translatesAutoresizingMaskIntoConstraints="NO" id="rgh-nM-0gP">
-                                                                <rect key="frame" x="22" y="21" width="48" height="48"/>
+                                                                <rect key="frame" x="22" y="20.999999999999943" width="48" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="48" id="O8c-km-s4Y"/>
                                                                     <constraint firstAttribute="width" constant="48" id="PxM-wg-bca"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frango" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vna-Vf-Sp4">
-                                                                <rect key="frame" x="30.333333333333329" y="75" width="31.666666666666671" height="11.666666666666671"/>
+                                                                <rect key="frame" x="30.333333333333329" y="74.999999999999943" width="31.666666666666671" height="11.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -361,14 +360,14 @@ Receitas Feitas por AI
                                                         <rect key="frame" x="110" y="0.0" width="92" height="90"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Noodle" translatesAutoresizingMaskIntoConstraints="NO" id="F1h-ld-oKj">
-                                                                <rect key="frame" x="22" y="21" width="48" height="48"/>
+                                                                <rect key="frame" x="22" y="20.999999999999943" width="48" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="48" id="OJo-jZ-boQ"/>
                                                                     <constraint firstAttribute="width" constant="48" id="WV4-bT-Plj"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Macarrão" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrA-oo-s7O">
-                                                                <rect key="frame" x="24.666666666666654" y="75" width="42.666666666666657" height="11.666666666666671"/>
+                                                                <rect key="frame" x="24.666666666666654" y="74.999999999999943" width="42.666666666666657" height="11.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -388,14 +387,14 @@ Receitas Feitas por AI
                                                         <rect key="frame" x="220" y="0.0" width="92" height="90"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Potato" translatesAutoresizingMaskIntoConstraints="NO" id="6Ln-p5-Aho">
-                                                                <rect key="frame" x="22" y="21" width="48" height="48"/>
+                                                                <rect key="frame" x="22" y="20.999999999999943" width="48" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="48" id="eTf-he-SzD"/>
                                                                     <constraint firstAttribute="width" constant="48" id="iR2-9z-10I"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Batata" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7M-T9-eB2">
-                                                                <rect key="frame" x="31.333333333333314" y="75" width="29.333333333333329" height="11.666666666666671"/>
+                                                                <rect key="frame" x="31.333333333333314" y="74.999999999999943" width="29.333333333333329" height="11.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -784,14 +783,14 @@ Receitas Feitas por AI
                                                         <rect key="frame" x="0.0" y="0.0" width="92" height="90"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bacon" translatesAutoresizingMaskIntoConstraints="NO" id="Hx0-hG-obT">
-                                                                <rect key="frame" x="22" y="21" width="48" height="48"/>
+                                                                <rect key="frame" x="22" y="21.000000000000114" width="48" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="95o-rP-jzQ"/>
                                                                     <constraint firstAttribute="height" constant="48" id="OWE-0M-CiM"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bacon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDb-0G-rP6">
-                                                                <rect key="frame" x="31.666666666666671" y="75" width="29" height="11.666666666666671"/>
+                                                                <rect key="frame" x="31.666666666666671" y="75.000000000000114" width="29" height="11.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -816,14 +815,14 @@ Receitas Feitas por AI
                                                         <rect key="frame" x="110" y="0.0" width="92" height="90"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Olive_Oil" translatesAutoresizingMaskIntoConstraints="NO" id="bDK-we-5o8">
-                                                                <rect key="frame" x="22" y="21" width="48" height="48"/>
+                                                                <rect key="frame" x="22" y="21.000000000000114" width="48" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="Lvr-uu-oOK"/>
                                                                     <constraint firstAttribute="height" constant="48" id="xcS-OK-Xhq"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Azeite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkv-oR-Ng9">
-                                                                <rect key="frame" x="32.333333333333343" y="75" width="27.666666666666671" height="11.666666666666671"/>
+                                                                <rect key="frame" x="32.333333333333343" y="75.000000000000114" width="27.666666666666671" height="11.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -843,14 +842,14 @@ Receitas Feitas por AI
                                                         <rect key="frame" x="220" y="0.0" width="92" height="90"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sausage" translatesAutoresizingMaskIntoConstraints="NO" id="2mn-Kn-8K8">
-                                                                <rect key="frame" x="22" y="21" width="48" height="48"/>
+                                                                <rect key="frame" x="22" y="21.000000000000114" width="48" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="48" id="A9N-kw-BkQ"/>
                                                                     <constraint firstAttribute="height" constant="48" id="oSD-sn-5pT"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salsicha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqb-ek-rUQ">
-                                                                <rect key="frame" x="27.333333333333311" y="75" width="37.666666666666657" height="11.666666666666671"/>
+                                                                <rect key="frame" x="27.333333333333311" y="75.000000000000114" width="37.666666666666657" height="11.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -869,7 +868,7 @@ Receitas Feitas por AI
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="2I0-iW-JBD">
-                                                <rect key="frame" x="0.0" y="918" width="312" height="90"/>
+                                                <rect key="frame" x="0.0" y="918.00000000000011" width="312" height="90"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0y-iq-H93">
                                                         <rect key="frame" x="0.0" y="0.0" width="92" height="90"/>
@@ -1508,7 +1507,7 @@ Receitas Feitas por AI
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6P-0X-0Cb">
-                                        <rect key="frame" x="109.66666666666669" y="1853" width="173" height="34"/>
+                                        <rect key="frame" x="109.66666666666669" y="1789.6666666666667" width="173" height="34"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="173" id="ZyD-Au-eEF"/>
@@ -1540,11 +1539,14 @@ Receitas Feitas por AI
                                 <constraints>
                                     <constraint firstItem="PV0-UO-GJq" firstAttribute="leading" secondItem="pzO-Ob-kkY" secondAttribute="leading" id="2TR-r6-Qa1"/>
                                     <constraint firstItem="uYD-dn-bsr" firstAttribute="trailing" secondItem="PV0-UO-GJq" secondAttribute="trailing" id="2YI-Ob-vNl"/>
-                                    <constraint firstItem="uYD-dn-bsr" firstAttribute="top" secondItem="trR-ly-oZY" secondAttribute="top" constant="10" id="3La-Pz-hw6"/>
                                     <constraint firstAttribute="bottom" secondItem="V6P-0X-0Cb" secondAttribute="bottom" constant="50" id="5Kc-De-db1"/>
-                                    <constraint firstItem="pzO-Ob-kkY" firstAttribute="top" secondItem="PV0-UO-GJq" secondAttribute="bottom" constant="20" id="6H2-C3-7DV"/>
-                                    <constraint firstItem="PV0-UO-GJq" firstAttribute="top" secondItem="uYD-dn-bsr" secondAttribute="bottom" constant="16" id="HWo-Pe-FgB"/>
+                                    <constraint firstItem="pzO-Ob-kkY" firstAttribute="top" secondItem="PV0-UO-GJq" secondAttribute="bottom" constant="10" id="6H2-C3-7DV"/>
+                                    <constraint firstItem="PGx-Jl-Uic" firstAttribute="leading" secondItem="trR-ly-oZY" secondAttribute="leading" id="9QD-aP-cbP"/>
+                                    <constraint firstItem="uYD-dn-bsr" firstAttribute="centerY" secondItem="PGx-Jl-Uic" secondAttribute="centerY" id="Aj1-Fc-bvU"/>
+                                    <constraint firstAttribute="trailing" secondItem="PGx-Jl-Uic" secondAttribute="trailing" id="ECE-kY-RbE"/>
+                                    <constraint firstItem="PGx-Jl-Uic" firstAttribute="top" secondItem="trR-ly-oZY" secondAttribute="top" id="Lby-cu-8bt"/>
                                     <constraint firstItem="V6P-0X-0Cb" firstAttribute="centerX" secondItem="pzO-Ob-kkY" secondAttribute="centerX" id="bRl-Af-qfi"/>
+                                    <constraint firstItem="PV0-UO-GJq" firstAttribute="top" secondItem="PGx-Jl-Uic" secondAttribute="bottom" constant="10" id="dOI-Tm-KKP"/>
                                     <constraint firstAttribute="trailing" secondItem="pzO-Ob-kkY" secondAttribute="trailing" constant="40" id="erV-xB-wsM"/>
                                     <constraint firstItem="V6P-0X-0Cb" firstAttribute="top" secondItem="pzO-Ob-kkY" secondAttribute="bottom" constant="28" id="oom-ij-n3x"/>
                                     <constraint firstItem="uYD-dn-bsr" firstAttribute="leading" secondItem="PV0-UO-GJq" secondAttribute="leading" id="p9X-Er-U1y"/>
@@ -1565,18 +1567,14 @@ Receitas Feitas por AI
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="trR-ly-oZY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="6Ac-GZ-9kp"/>
                             <constraint firstItem="ffd-Kn-Yh0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7Nw-dH-hB0"/>
                             <constraint firstAttribute="bottom" secondItem="trR-ly-oZY" secondAttribute="bottom" id="As4-hy-YVA"/>
-                            <constraint firstItem="n6Y-bd-gen" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="BQn-7Q-HHD"/>
-                            <constraint firstItem="n6Y-bd-gen" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" id="Pyf-yA-Dwc"/>
-                            <constraint firstItem="trR-ly-oZY" firstAttribute="top" secondItem="n6Y-bd-gen" secondAttribute="bottom" id="XFK-xG-4IF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="trR-ly-oZY" secondAttribute="trailing" id="i75-im-R4Y"/>
                             <constraint firstItem="ffd-Kn-Yh0" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="iX5-kM-Ybl"/>
-                            <constraint firstItem="n6Y-bd-gen" firstAttribute="centerX" secondItem="trR-ly-oZY" secondAttribute="centerX" id="mEI-3m-0YT"/>
                             <constraint firstAttribute="bottom" secondItem="ffd-Kn-Yh0" secondAttribute="bottom" id="rDY-QN-WWW"/>
                             <constraint firstItem="trR-ly-oZY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sHS-hD-CoF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ffd-Kn-Yh0" secondAttribute="trailing" id="uvH-aO-7kk"/>
-                            <constraint firstItem="n6Y-bd-gen" firstAttribute="trailing" secondItem="5EZ-qb-Rvc" secondAttribute="trailingMargin" id="vbC-da-99c"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1649,7 +1647,7 @@ Receitas Feitas por AI
         <image name="Cheese" width="284" height="284"/>
         <image name="Chicken" width="284" height="284"/>
         <image name="Chocolate" width="284" height="284"/>
-        <image name="Coco_Milk" width="423" height="280"/>
+        <image name="Coco_Milk" width="284" height="284"/>
         <image name="Coconut" width="284" height="284"/>
         <image name="Cookies" width="284" height="284"/>
         <image name="Cooking_Oil" width="284" height="284"/>
@@ -1686,14 +1684,12 @@ Receitas Feitas por AI
         <image name="Tomato_Extract" width="284" height="284"/>
         <image name="Tuna" width="284" height="284"/>
         <image name="Yam" width="284" height="284"/>
+        <image name="img_RecipeAI2" width="284" height="284"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

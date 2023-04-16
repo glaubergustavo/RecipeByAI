@@ -60,7 +60,6 @@ import UIKit
     
     private func configNavBar() {
         
-        self.navigationController?.navigationBar.alpha = 1
         self.navigationItem.title = Constants.Messages.Recipe
         self.navigationController?.navigationBar.titleTextAttributes =
         [NSAttributedString.Key.foregroundColor: UIColor.yellowColor()]

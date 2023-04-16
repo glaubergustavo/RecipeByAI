@@ -15,7 +15,7 @@ In this application you will be able to obtain new recipes made by AI with the i
 
 ## App working
 
-![RecipeByAI App Recording](https://user-images.githubusercontent.com/90629963/232262159-c3d44382-0f70-4d02-8429-0d3688edd3c8.gif)
+![RecipeByAI App Recording](https://user-images.githubusercontent.com/90629963/232262560-b845ea7f-8c6e-4e1f-b4d1-fcf426c163ac.gif)
 
 Authors
 

@@ -15,7 +15,7 @@ In this application you will be able to obtain new recipes made by AI with the i
 
 ## App working
 
-![RecipeByAI App Recording](https://user-images.githubusercontent.com/90629963/232262560-b845ea7f-8c6e-4e1f-b4d1-fcf426c163ac.gif)
+![Simulator Screen Recording - iPhone 14 Pro - 2023-04-15 at 23 27 06](https://user-images.githubusercontent.com/90629963/232262886-bc278a43-441f-4807-b22f-4fbda8a7a792.gif)
 
 Authors
 

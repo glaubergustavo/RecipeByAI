@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Lottie
 
 final class HomeViewController: UIViewController,
-                          HomePresenterDelegate {
+                                HomePresenterDelegate {
     
     
     // MARK: -@IBOutlet Motives Views
@@ -60,11 +61,13 @@ final class HomeViewController: UIViewController,
     @IBOutlet weak var vwShrimp: UIView!
     @IBOutlet weak var vwSardine: UIView!
     @IBOutlet weak var vwChayote: UIView!
-    @IBOutlet weak var actLoading: UIActivityIndicatorView!
     @IBOutlet weak var vwBackground: UIView!
+    @IBOutlet weak var vwAnimationLoading: UIView!
     
     // MARK: Variables
     var checkboxImage: UIImageView!
+    
+    var animationView = LottieAnimationView()
     
     var presenter: HomePresenter!
     var centerYConstraint: NSLayoutConstraint?
@@ -85,6 +88,7 @@ final class HomeViewController: UIViewController,
         
         self.navigationController?.navigationBar.isHidden = true
         vwBackground.alpha = 0
+        vwAnimationLoading.alpha = 0
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -103,10 +107,23 @@ final class HomeViewController: UIViewController,
     }
     
     private func configUI() {
-
-        showLoading(false)
-        
         configIngredientsViews()
+    }
+    
+    private func configAnimationLoading() {
+        
+        vwAnimationLoading.alpha = 1
+        vwAnimationLoading.backgroundColor = .clear
+        vwAnimationLoading.layer.cornerRadius = vwAnimationLoading.frame.height / 2
+        animationView = LottieAnimationView(name: "120972-chef")
+        animationView.loopMode = .loop
+        animationView.contentMode = .scaleAspectFill
+        animationView.frame = CGRect(x: -70, y: -100, width: 200, height: 200)
+        animationView.animationSpeed = 1.0
+        animationView.tintColor = UIColor.orange
+        animationView.play()
+        vwAnimationLoading.addSubview(animationView)
+
     }
     
     private func configIngredientsViews() {
@@ -202,12 +219,13 @@ final class HomeViewController: UIViewController,
         
         if loading {
             UIView.animate(withDuration: 0.5) {
-                self.actLoading.startAnimating()
+                self.configAnimationLoading()
                 self.vwBackground.alpha = 0.7
             }
         }else {
             vwBackground.alpha = 0
-            actLoading.stopAnimating()
+            animationView.stop()
+            animationView.removeFromSuperview()
         }
     }
     

@@ -31,7 +31,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receitas Feitas por AI" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYD-dn-bsr">
-                                        <rect key="frame" x="40" y="25.333333333333314" width="330" height="49.333333333333371"/>
+                                        <rect key="frame" x="40" y="25.333333333333332" width="330" height="49.333333333333343"/>
                                         <fontDescription key="fontDescription" name="Billabong" family="Billabong" pointSize="40"/>
                                         <color key="textColor" systemColor="systemOrangeColor"/>
                                         <nil key="highlightedColor"/>
@@ -1558,18 +1558,23 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="A9a-6J-z6w">
-                                <rect key="frame" x="178" y="407" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" systemColor="systemOrangeColor"/>
-                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFD-Vz-RHv">
+                                <rect key="frame" x="161.66666666666666" y="403.66666666666669" width="70" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="IRe-HW-wrf"/>
+                                    <constraint firstAttribute="width" constant="70" id="XdS-Zc-Q1I"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="trR-ly-oZY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="6Ac-GZ-9kp"/>
                             <constraint firstItem="ffd-Kn-Yh0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7Nw-dH-hB0"/>
+                            <constraint firstItem="RFD-Vz-RHv" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="9eo-Xq-e3c"/>
                             <constraint firstAttribute="bottom" secondItem="trR-ly-oZY" secondAttribute="bottom" id="As4-hy-YVA"/>
+                            <constraint firstItem="RFD-Vz-RHv" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="N2e-Fl-Sxe"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="trR-ly-oZY" secondAttribute="trailing" id="i75-im-R4Y"/>
                             <constraint firstItem="ffd-Kn-Yh0" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="iX5-kM-Ybl"/>
                             <constraint firstAttribute="bottom" secondItem="ffd-Kn-Yh0" secondAttribute="bottom" id="rDY-QN-WWW"/>
@@ -1578,7 +1583,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="actLoading" destination="A9a-6J-z6w" id="f4L-jV-JBf"/>
+                        <outlet property="vwAnimationLoading" destination="RFD-Vz-RHv" id="h58-ue-OA9"/>
                         <outlet property="vwBackground" destination="ffd-Kn-Yh0" id="8DH-V2-geW"/>
                         <outlet property="vwBacon" destination="pv9-lL-kV3" id="iER-Nb-KBv"/>
                         <outlet property="vwBanana" destination="2zv-n9-5yv" id="eql-hZ-VNp"/>

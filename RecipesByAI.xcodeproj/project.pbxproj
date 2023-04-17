@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5655F3F029EC6CE300BF1B1F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5655F3EF29EC6CE300BF1B1F /* Lottie */; };
 		5667C1CC29E5F02C00A56B27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667C1CB29E5F02C00A56B27 /* AppDelegate.swift */; };
 		5667C1CE29E5F02C00A56B27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5667C1CD29E5F02C00A56B27 /* SceneDelegate.swift */; };
 		5667C1D529E5F02E00A56B27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5667C1D429E5F02E00A56B27 /* Assets.xcassets */; };
 		5667C1D829E5F02E00A56B27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667C1D629E5F02E00A56B27 /* LaunchScreen.storyboard */; };
 		5682447829EB7F5B007778EE /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5682447729EB7F5B007778EE /* Billabong.ttf */; };
+		56A3816429ECFD0D00691A79 /* 94436-cooking-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 56A3816329ECFD0D00691A79 /* 94436-cooking-animation.json */; };
+		56A3816629ECFEB900691A79 /* 14970-splash-screen-coocking-app.json in Resources */ = {isa = PBXBuildFile; fileRef = 56A3816529ECFEB900691A79 /* 14970-splash-screen-coocking-app.json */; };
+		56A3816829ED011400691A79 /* 120972-chef.json in Resources */ = {isa = PBXBuildFile; fileRef = 56A3816729ED011400691A79 /* 120972-chef.json */; };
+		56A3816A29ED011B00691A79 /* 14972-scoll-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 56A3816929ED011B00691A79 /* 14972-scoll-loading.json */; };
 		56C401B029E74FBF00D3FE88 /* RecipePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C401AB29E74FBF00D3FE88 /* RecipePresenter.swift */; };
 		56C401B129E74FBF00D3FE88 /* RecipeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C401AC29E74FBF00D3FE88 /* RecipeRouter.swift */; };
 		56C401B229E74FBF00D3FE88 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C401AD29E74FBF00D3FE88 /* RecipeViewController.swift */; };
@@ -36,6 +41,10 @@
 		5667C1D729E5F02E00A56B27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5667C1D929E5F02E00A56B27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5682447729EB7F5B007778EE /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
+		56A3816329ECFD0D00691A79 /* 94436-cooking-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "94436-cooking-animation.json"; path = "../../../../../../Downloads/94436-cooking-animation.json"; sourceTree = "<group>"; };
+		56A3816529ECFEB900691A79 /* 14970-splash-screen-coocking-app.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "14970-splash-screen-coocking-app.json"; path = "../../../../../../Downloads/14970-splash-screen-coocking-app.json"; sourceTree = "<group>"; };
+		56A3816729ED011400691A79 /* 120972-chef.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "120972-chef.json"; path = "../../../../../../Downloads/120972-chef.json"; sourceTree = "<group>"; };
+		56A3816929ED011B00691A79 /* 14972-scoll-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "14972-scoll-loading.json"; path = "../../../../../../Downloads/14972-scoll-loading.json"; sourceTree = "<group>"; };
 		56C401AB29E74FBF00D3FE88 /* RecipePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipePresenter.swift; sourceTree = "<group>"; };
 		56C401AC29E74FBF00D3FE88 /* RecipeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeRouter.swift; sourceTree = "<group>"; };
 		56C401AD29E74FBF00D3FE88 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56E590DE29E5FBD700A3EC0E /* OpenAISwift in Frameworks */,
+				5655F3F029EC6CE300BF1B1F /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +92,7 @@
 		5667C1CA29E5F02C00A56B27 /* RecipesByAI */ = {
 			isa = PBXGroup;
 			children = (
+				56A3816229ECFCE100691A79 /* Animation Lottie */,
 				5682447629EB7F5B007778EE /* Fonts */,
 				56E590C529E5F59D00A3EC0E /* Util */,
 				56E590AD29E5F39A00A3EC0E /* Modules */,
@@ -100,6 +111,17 @@
 				5682447729EB7F5B007778EE /* Billabong.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		56A3816229ECFCE100691A79 /* Animation Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				56A3816529ECFEB900691A79 /* 14970-splash-screen-coocking-app.json */,
+				56A3816329ECFD0D00691A79 /* 94436-cooking-animation.json */,
+				56A3816929ED011B00691A79 /* 14972-scoll-loading.json */,
+				56A3816729ED011400691A79 /* 120972-chef.json */,
+			);
+			path = "Animation Lottie";
 			sourceTree = "<group>";
 		};
 		56C401AA29E74FBF00D3FE88 /* Recipe */ = {
@@ -163,6 +185,7 @@
 			name = RecipesByAI;
 			packageProductDependencies = (
 				56E590DD29E5FBD700A3EC0E /* OpenAISwift */,
+				5655F3EF29EC6CE300BF1B1F /* Lottie */,
 			);
 			productName = RecipesByAI;
 			productReference = 5667C1C829E5F02C00A56B27 /* RecipesByAI.app */;
@@ -194,6 +217,7 @@
 			mainGroup = 5667C1BF29E5F02C00A56B27;
 			packageReferences = (
 				56E590DC29E5FBD700A3EC0E /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				5655F3EE29EC6CE300BF1B1F /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = 5667C1C929E5F02C00A56B27 /* Products */;
 			projectDirPath = "";
@@ -209,10 +233,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56A3816829ED011400691A79 /* 120972-chef.json in Resources */,
 				56E590D529E5F5E200A3EC0E /* Home.storyboard in Resources */,
 				5667C1D829E5F02E00A56B27 /* LaunchScreen.storyboard in Resources */,
+				56A3816429ECFD0D00691A79 /* 94436-cooking-animation.json in Resources */,
+				56A3816629ECFEB900691A79 /* 14970-splash-screen-coocking-app.json in Resources */,
 				5667C1D529E5F02E00A56B27 /* Assets.xcassets in Resources */,
 				5682447829EB7F5B007778EE /* Billabong.ttf in Resources */,
+				56A3816A29ED011B00691A79 /* 14972-scoll-loading.json in Resources */,
 				56C401B329E74FBF00D3FE88 /* Recipe.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +474,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5655F3EE29EC6CE300BF1B1F /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.3;
+			};
+		};
 		56E590DC29E5FBD700A3EC0E /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
@@ -457,6 +493,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5655F3EF29EC6CE300BF1B1F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5655F3EE29EC6CE300BF1B1F /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
 		56E590DD29E5FBD700A3EC0E /* OpenAISwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 56E590DC29E5FBD700A3EC0E /* XCRemoteSwiftPackageReference "OpenAISwift" */;

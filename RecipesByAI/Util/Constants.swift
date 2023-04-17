@@ -8,7 +8,7 @@
 class Constants {
     
     struct API {
-        static let authToken: String = ""
+        static let authToken: String = "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"
     }
     
     struct Messages {

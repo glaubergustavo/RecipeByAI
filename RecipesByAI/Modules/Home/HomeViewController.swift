@@ -9,68 +9,18 @@ import UIKit
 import Lottie
 
 final class HomeViewController: UIViewController,
-                                HomePresenterDelegate {
+                                HomePresenterDelegate,
+                                IngredientsCellDelegate {
     
     
-    // MARK: -@IBOutlet Motives Views
-    @IBOutlet weak var vwBanana: UIView!
-    @IBOutlet weak var vwOnion: UIView!
-    @IBOutlet weak var vwSugar: UIView!
-    @IBOutlet weak var vwMeat: UIView!
-    @IBOutlet weak var vwRice: UIView!
-    @IBOutlet weak var vwBean: UIView!
-    @IBOutlet weak var vwCheese: UIView!
-    @IBOutlet weak var vwEggs: UIView!
-    @IBOutlet weak var vwTomato: UIView!
-    @IBOutlet weak var vwChicken: UIView!
-    @IBOutlet weak var vwNoodle: UIView!
-    @IBOutlet weak var vwPotato: UIView!
-    @IBOutlet weak var vwYam: UIView!
-    @IBOutlet weak var vwLettuce: UIView!
-    @IBOutlet weak var vwCreamyCheese: UIView!
-    @IBOutlet weak var vwCarrot: UIView!
-    @IBOutlet weak var vwFlour: UIView!
-    @IBOutlet weak var vwButter: UIView!
-    @IBOutlet weak var vwCoriander: UIView!
-    @IBOutlet weak var vwMaizeStarch: UIView!
-    @IBOutlet weak var vwTomatoExtract: UIView!
-    @IBOutlet weak var vwHoney: UIView!
-    @IBOutlet weak var vwChocolate: UIView!
-    @IBOutlet weak var vwSweetenedCondensedMilk: UIView!
-    @IBOutlet weak var vwBacon: UIView!
-    @IBOutlet weak var vwOliveOil: UIView!
-    @IBOutlet weak var vwSausage: UIView!
-    @IBOutlet weak var vwParsley: UIView!
-    @IBOutlet weak var vwCookies: UIView!
-    @IBOutlet weak var vwStrawberry: UIView!
-    @IBOutlet weak var vwCookingOil: UIView!
-    @IBOutlet weak var vwLemon: UIView!
-    @IBOutlet weak var vwFerment: UIView!
-    @IBOutlet weak var vwCornFlakes: UIView!
-    @IBOutlet weak var vwCassava: UIView!
-    @IBOutlet weak var vwCoconut: UIView!
-    @IBOutlet weak var vwCocoMilk: UIView!
-    @IBOutlet weak var vwCorn: UIView!
-    @IBOutlet weak var vwPeas: UIView!
-    @IBOutlet weak var vwLentil: UIView!
-    @IBOutlet weak var vwCassavaGum: UIView!
-    @IBOutlet weak var vwPumpkin: UIView!
-    @IBOutlet weak var vwSweetPotato: UIView!
-    @IBOutlet weak var vwTuna: UIView!
-    @IBOutlet weak var vwMushrooms: UIView!
-    @IBOutlet weak var vwShrimp: UIView!
-    @IBOutlet weak var vwSardine: UIView!
-    @IBOutlet weak var vwChayote: UIView!
+    // MARK: -@IBOutlet Views
     @IBOutlet weak var vwBackground: UIView!
     @IBOutlet weak var vwAnimationLoading: UIView!
+    @IBOutlet weak var cvIngredients: UICollectionView!
     
     // MARK: Variables
-    var checkboxImage: UIImageView!
-    
     var animationView = LottieAnimationView()
-    
     var presenter: HomePresenter!
-    var centerYConstraint: NSLayoutConstraint?
     
     //-----------------------------------------------------------------------
     //  MARK: - Life Cycle
@@ -91,23 +41,67 @@ final class HomeViewController: UIViewController,
         vwAnimationLoading.alpha = 0
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        self.navigationController?.navigationBar.isHidden = false
-    }
-    
     //-----------------------------------------------------------------------
     //  MARK: - Custom Methods
     //-----------------------------------------------------------------------
     
     private func loadUI() {
         
-        presenter.arrayOfDicOfViews = [[vwBanana:Constants.Messages.Banana], [vwOnion:Constants.Messages.Onion], [vwSugar:Constants.Messages.Sugar], [vwMeat:Constants.Messages.Meat], [vwRice:Constants.Messages.Rice], [vwBean:Constants.Messages.Bean], [vwCheese:Constants.Messages.Cheese], [vwEggs:Constants.Messages.Eggs], [vwTomato:Constants.Messages.Tomato], [vwChicken:Constants.Messages.Chicken], [vwNoodle:Constants.Messages.Noodle], [vwPotato:Constants.Messages.Potato], [vwYam:Constants.Messages.Yam], [vwLettuce:Constants.Messages.Lettuce], [vwCreamyCheese:Constants.Messages.CreamyCheese], [vwCarrot:Constants.Messages.Carrot], [vwFlour:Constants.Messages.Flour], [vwButter:Constants.Messages.Butter], [vwCoriander:Constants.Messages.Coriander], [vwMaizeStarch:Constants.Messages.MaizeStarch], [vwTomatoExtract:Constants.Messages.TomatoExtract], [vwHoney:Constants.Messages.Honey], [vwChocolate:Constants.Messages.Chocolate], [vwSweetenedCondensedMilk:Constants.Messages.SweetenedCondensedMilk], [vwBacon: Constants.Messages.Bacon], [vwOliveOil:Constants.Messages.OliveOil], [vwSausage:Constants.Messages.Sausage], [vwParsley:Constants.Messages.Parsley], [vwCookies:Constants.Messages.Cookies], [vwStrawberry:Constants.Messages.Strawberry], [vwCookingOil:Constants.Messages.CookingOil], [vwLemon:Constants.Messages.Lemon], [vwFerment:Constants.Messages.Ferment], [vwCornFlakes:Constants.Messages.CornFlakes], [vwCassava:Constants.Messages.Cassava], [vwCoconut:Constants.Messages.Coconut], [vwCocoMilk:Constants.Messages.CocoMilk], [vwCorn:Constants.Messages.Corn], [vwPeas:Constants.Messages.Peas], [vwLentil: Constants.Messages.Lentil], [vwCassavaGum:Constants.Messages.CassavaGum], [vwPumpkin:Constants.Messages.Pumpkin], [vwSweetPotato:Constants.Messages.SweetPotato], [vwTuna:Constants.Messages.Tuna], [vwMushrooms:Constants.Messages.Mushrooms], [vwShrimp:Constants.Messages.Shrimp], [vwSardine:Constants.Messages.Sardine], [vwChayote:Constants.Messages.Chayote]]
+        presenter.arrayOfDicOfIngredients = [
+            [Constants.Images.Banana: Constants.Messages.Banana],
+            [Constants.Images.Onion: Constants.Messages.Onion],
+            [Constants.Images.Sugar: Constants.Messages.Sugar],
+            [Constants.Images.Meat: Constants.Messages.Meat],
+            [Constants.Images.Rice: Constants.Messages.Rice],
+            [Constants.Images.Bean: Constants.Messages.Bean],
+            [Constants.Images.Cheese: Constants.Messages.Cheese],
+            [Constants.Images.Eggs: Constants.Messages.Eggs],
+            [Constants.Images.Tomato: Constants.Messages.Tomato],
+            [Constants.Images.Chicken: Constants.Messages.Chicken],
+            [Constants.Images.Noodle: Constants.Messages.Noodle],
+            [Constants.Images.Potato: Constants.Messages.Potato],
+            [Constants.Images.Yam: Constants.Messages.Yam],
+            [Constants.Images.Lettuce: Constants.Messages.Lettuce],
+            [Constants.Images.CreamyCheese: Constants.Messages.CreamyCheese],
+            [Constants.Images.Carrot: Constants.Messages.Carrot],
+            [Constants.Images.Flour: Constants.Messages.Flour],
+            [Constants.Images.Butter: Constants.Messages.Butter],
+            [Constants.Images.Coriander: Constants.Messages.Coriander],
+            [Constants.Images.MaizeStarch: Constants.Messages.MaizeStarch],
+            [Constants.Images.TomatoExtract: Constants.Messages.TomatoExtract],
+            [Constants.Images.Honey: Constants.Messages.Honey],
+            [Constants.Images.Chocolate: Constants.Messages.Chocolate],
+            [Constants.Images.SweetenedCondensedMilk: Constants.Messages.SweetenedCondensedMilk],
+            [Constants.Images.Bacon: Constants.Messages.Bacon],
+            [Constants.Images.OliveOil: Constants.Messages.OliveOil],
+            [Constants.Images.Sausage: Constants.Messages.Sausage],
+            [Constants.Images.Parsley: Constants.Messages.Parsley],
+            [Constants.Images.Cookies: Constants.Messages.Cookies],
+            [Constants.Images.Strawberry: Constants.Messages.Strawberry],
+            [Constants.Images.CookingOil: Constants.Messages.CookingOil],
+            [Constants.Images.Lemon: Constants.Messages.Lemon],
+            [Constants.Images.Ferment: Constants.Messages.Ferment],
+            [Constants.Images.CornFlakes: Constants.Messages.CornFlakes],
+            [Constants.Images.Cassava: Constants.Messages.Cassava],
+            [Constants.Images.Coconut: Constants.Messages.Coconut],
+            [Constants.Images.CocoMilk: Constants.Messages.CocoMilk],
+            [Constants.Images.Corn: Constants.Messages.Corn],
+            [Constants.Images.Peas: Constants.Messages.Peas],
+            [Constants.Images.Lentil: Constants.Messages.Lentil],
+            [Constants.Images.CassavaGum: Constants.Messages.CassavaGum],
+            [Constants.Images.Pumpkin: Constants.Messages.Pumpkin],
+            [Constants.Images.SweetPotato: Constants.Messages.SweetPotato],
+            [Constants.Images.Tuna: Constants.Messages.Tuna],
+            [Constants.Images.Mushrooms: Constants.Messages.Mushrooms],
+            [Constants.Images.Shrimp: Constants.Messages.Shrimp],
+            [Constants.Images.Sardine: Constants.Messages.Sardine],
+            [Constants.Images.Chayote: Constants.Messages.Chayote]
+        ]
+
     }
     
     private func configUI() {
-        configIngredientsViews()
+        cvIngredients.register(UINib(nibName: "IngredientsCell", bundle: Bundle.main), forCellWithReuseIdentifier: "IngredientsCell")
     }
     
     private func configAnimationLoading() {
@@ -126,69 +120,24 @@ final class HomeViewController: UIViewController,
 
     }
     
-    private func configIngredientsViews() {
-        
-        for dic in presenter.arrayOfDicOfViews {
-            for (view, _) in dic {
-                view.configViewAppearance()
-                self.configCheckboxImage(view: view)
-            }
-        }
-    }
-    
-    private func configCheckboxImage(view: UIView) {
-        
-        checkboxImage = UIImageView(image: UIImage(named: Constants.Images.iconCheckGreen))
-        checkboxImage.frame = CGRect(x: 74, y: 6, width: 12, height: 12)
-        checkboxImage.isHidden = true
-        checkboxImage.tag = 1
-        view.addSubview(checkboxImage)
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
-        view.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    @objc func viewTapped(sender: UITapGestureRecognizer) {
-        
-        guard let view = sender.view else { return }
+    func configSelectedIngredients(view: UIView, addIngredients: Bool) {
         
         for subview in view.subviews {
-            
-            if let imageView = subview as? UIImageView,
-               imageView.tag == 1 {
+            if let imageView = subview as? UIImageView, let currentImage = imageView.image {
                 
-                self.configAnimationsIngredients(view: view, imageView: imageView)
-            }
-        }
-    }
-    
-    private func configAnimationsIngredients(view: UIView, imageView: UIImageView) {
-        
-        imageView.isHidden = !imageView.isHidden
-        
-        if imageView.isHidden {
-            
-            configSelectedIngredients(view: view, addIngredients: false)
-            
-            view.shadowAnimation(transform: CGAffineTransform.identity, size: CGSize(width: 0, height: 2))
-        }else {
-            
-            configSelectedIngredients(view: view, addIngredients: true)
-            
-            view.shadowAnimation(transform: CGAffineTransform(scaleX: 0.9, y: 0.9), size: CGSize(width: 0, height: -5))
-        }
-    }
-    
-    private func configSelectedIngredients(view: UIView, addIngredients: Bool) {
-        
-        for dic in presenter.arrayOfDicOfViews {
-            for (viewName, ingredients) in dic {
-                if view == viewName {
-                    if addIngredients {
-                        presenter.selectedIngredients.append(ingredients)
-                    }else {
-                        if let index = presenter.selectedIngredients.firstIndex(of: ingredients) {
-                            presenter.selectedIngredients.remove(at: index)
+                for dic in presenter.arrayOfDicOfIngredients {
+                    
+                    for (image, ingredient) in dic {
+                        
+                        if currentImage == UIImage(named: image) {
+                            
+                            if addIngredients {
+                                presenter.selectedIngredients.append(ingredient)
+                            }else {
+                                if let index = presenter.selectedIngredients.firstIndex(of: ingredient) {
+                                    presenter.selectedIngredients.remove(at: index)
+                                }
+                            }
                         }
                     }
                 }
@@ -233,13 +182,57 @@ final class HomeViewController: UIViewController,
     
     // MARK: - Actions buttons
     
-    
     @IBAction func getRecipe(_ sender: Any) {
         if presenter.selectedIngredients.count >= 3 {
             presenter.loadData()
         }else {
             ingredientAmountAlert()
         }
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.size.width/4, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 15, bottom: 0, right: 15)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.arrayOfDicOfIngredients.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientsCell", for: indexPath) as! IngredientsCell
+            
+        let ingredient = presenter.arrayOfDicOfIngredients[indexPath.row]
+        let ingredientImageName = ingredient.keys.first ?? ""
+        let ingredientText = ingredient.values.first ?? ""
+            
+        cell.setIngredientImage(image: ingredientImageName)
+        cell.setIngredientName(name: ingredientText)
+        cell.delegate = self
+            
+        return cell
     }
     
 }

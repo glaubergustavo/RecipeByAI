@@ -19,7 +19,7 @@ final class HomePresenter {
     
     var recipe: String = Constants.Messages.Empty
     var selectedIngredients: [String] = []
-    var arrayOfDicOfViews: [[UIView : String]] = [[:]]
+    var arrayOfDicOfIngredients: [[String : String]] = [[:]]
     
     var delegate: HomePresenterDelegate?
     
